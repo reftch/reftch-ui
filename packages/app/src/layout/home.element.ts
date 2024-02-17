@@ -10,7 +10,14 @@ export class HomeElement extends BaseElement(LitElement) {
         <h1 class="text-2xl">Home Element</h1>
         <slot></slot>
 
-        <button-element>Click me!</button-element>
+        <div class="flex gap-2">
+          <button-element>Default</button-element>
+          <button-element variant="secondary">Secondary</button-element>
+          <button-element variant="destructive">Destructive</button-element>
+          <button-element variant="outline">Outline</button-element>
+          <button-element variant="ghost">Ghost</button-element>
+          <button-element variant="link">Link</button-element>
+        </div>
       </div>
     `
   }
