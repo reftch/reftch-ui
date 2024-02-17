@@ -7,7 +7,7 @@ export class HomeElement extends BaseElement(LitElement) {
   render() {
     return html`
       <div>
-        <h1 class="text-2xl">Home Element</h1>
+        <h1 class="text-2xl text-primary">Home Element</h1>
         <slot></slot>
 
         <div class="flex gap-2">

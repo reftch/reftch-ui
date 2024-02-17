@@ -2,7 +2,9 @@ import { join, dirname } from "path"
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
+    './index.html',
     './src/**/*.{html,ts}',
     join(dirname(require.resolve('@reftch-ui/ui')), '**/*.{html,ts,js}'),
   ],
