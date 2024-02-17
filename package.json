@@ -1,0 +1,22 @@
+{
+  "name": "reftch-ui",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "npm run dev --ws --if-present",
+    "build": "npm run build --ws --if-present",
+    "format": "prettier . --write",
+    "clean": "npm run clean -ws --if-present && npx -y rimraf ./node_modules"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "packages/tailwind",
+    "packages/app",
+    "packages/ui"
+  ],
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
+}

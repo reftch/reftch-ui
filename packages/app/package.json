@@ -1,0 +1,25 @@
+{
+  "name": "@reftch-ui/app",
+  "version": "1.0.0",
+  "description": "C",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "clean": "npx -y rimraf ./dist ./types ./node_modules"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@reftch-ui/tailwind": "^1.0.0",
+    "@reftch-ui/ui": "^1.0.0",
+    "lit": "^3.1.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.3"
+  }
+}
