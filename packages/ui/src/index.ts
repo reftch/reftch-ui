@@ -1,2 +1,2 @@
 // Button
-export { ButtonElement } from './button/button.element'
+export { ButtonElement } from './lib/button/button.element'

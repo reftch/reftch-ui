@@ -13,7 +13,9 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+
+    "types": ["vitest/jsdom"]
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["**/*.spec.ts"]
