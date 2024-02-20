@@ -17,6 +17,11 @@ export const BaseElement = <T extends Constructor<LitElement>>(superClass: T, st
     protected get elementClass() {
       return twMerge(this.defaultClass, this.getAttribute('class'))
     }
+
+    protected emit<T = any>(name: string, detail?: T) {
+      const event = new CustomEvent<T>(name, { detail: detail, bubbles: true, composed: true })
+      this.dispatchEvent(event)
+    }
   }
 
   // Cast return type to the superClass type passed in

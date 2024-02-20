@@ -10,11 +10,6 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
   } else {
     // command === 'build'
     return {
-      resolve: {
-        alias: {
-          $lib: resolve(__dirname, './src/lib'),
-        },
-      },
       build: {
         outDir: 'dist',
         emptyOutDir: false,
@@ -22,7 +17,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         manifest: false,
         sourcemap: false,
         lib: {
-          entry: [resolve(__dirname, 'src/index.ts')],
+          entry: [resolve(__dirname, 'lib/index.ts')],
           name: 'reftch-ui',
           fileName: (format) => `reftch-ui.${format}.js`
         },

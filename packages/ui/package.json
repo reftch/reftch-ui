@@ -2,7 +2,7 @@
   "name": "@reftch-ui/ui",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.ts",
+  "main": "lib/index.ts",
   "keywords": [],
   "author": "reftch",
   "type": "module",
@@ -13,6 +13,7 @@
     "clean": "npx -y rimraf ./dist ./node_modules"
   },
   "dependencies": {
+    "@lit/context": "^1.1.0",
     "@reftch-ui/tailwind": "^1.0.0",
     "lit": "^3.1.2"
   },
