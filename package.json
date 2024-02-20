@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "npm run dev --ws --if-present",
     "build": "npm run build --ws --if-present",
+    "test": "npm run test --ws --if-present",
     "format": "prettier . --write",
     "clean": "npm run clean -ws --if-present && npx -y rimraf ./node_modules"
   },
