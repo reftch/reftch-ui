@@ -3,7 +3,8 @@
  */
 
 import { describe, expect, it, vi } from 'vitest'
-import '../../lib/separator'
+
+import '../lib/separator/separator.element'
 
 describe('Separator element', async () => {
   const TAG = 'separator-element'
@@ -18,7 +19,7 @@ describe('Separator element', async () => {
     const el = await vi.waitUntil(() => getInsideButton())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('shrink-0 bg-border h-[1px] w-full')
+    expect(el.className).toContain('shrink-0 bg-border border-border border-b')
   })
 
   it('should be vertical', async () => {
@@ -27,6 +28,6 @@ describe('Separator element', async () => {
     const el = await vi.waitUntil(() => getInsideButton())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('shrink-0 bg-border w-[1px] h-full')
+    expect(el.className).toContain('shrink-0 bg-border border-border border-l')
   })
 })

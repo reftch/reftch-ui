@@ -1,10 +1,15 @@
 /**
  * @vitest-environment jsdom
  */
+
 import { describe, expect, it, vi } from 'vitest'
 import userEvent from '@testing-library/user-event'
 
-import '../../lib/select'
+import '../lib/select/select.element'
+import '../lib/select/select.content'
+import '../lib/select/select.item'
+import '../lib/select/select.trigger'
+import '../lib/select/select.value'
 
 describe('Select element', async () => {
   function mount(value?: string) {

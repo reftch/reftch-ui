@@ -7,14 +7,10 @@ import { twMerge } from 'tailwind-merge'
 export class SeparatorElement extends BaseElement(LitElement) {
   @property({ type: String }) type: 'vertical' | 'horizontal' = 'horizontal'
 
-  protected defaultClass = 'shrink-0 bg-border'
+  protected defaultClass = 'shrink-0 bg-border border-border'
 
   protected get elementClass() {
-    return twMerge(
-      this.defaultClass,
-      this.type === 'horizontal' ? 'h-[1px] w-full' : 'w-[1px] h-full',
-      this.getAttribute('class')
-    )
+    return twMerge(this.defaultClass, this.type === 'horizontal' ? 'border-b' : 'border-l', this.getAttribute('class'))
   }
 
   render() {
