@@ -11,6 +11,7 @@ export class InputElement extends BaseElement(LitElement) {
   @property({ type: String }) value: string = ''
   @property({ type: String }) placeholder = ''
   @property({ type: Boolean }) focusable = false
+  @property({ type: Boolean }) disabled = false
 
   inputRef = createRef<HTMLInputElement>()
 
@@ -35,6 +36,14 @@ export class InputElement extends BaseElement(LitElement) {
   }
   protected onKeyup(e: Event): void {
     this.emit('change', { id: this.id, value: (e.target as HTMLInputElement).value })
+  }
+
+  protected get elementClass() {
+    return twMerge(
+      this.defaultClass,
+      this.disabled && 'opacity-50 focus-visible:ring-0 cursor-default tab',
+      this.getAttribute('class')
+    )
   }
 
   render() {
