@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { BaseElement } from '@docbridge-pilot-ui/tailwind'
+import { BaseElement } from '@reftch-ui/tailwind'
 import { twMerge } from 'tailwind-merge'
 
 type RadioSize = keyof typeof size
