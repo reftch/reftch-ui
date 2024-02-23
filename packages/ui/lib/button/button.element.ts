@@ -6,11 +6,16 @@ import { twMerge } from 'tailwind-merge'
 export type ButtonColor = keyof typeof colorClasses
 
 const colorClasses = {
-  default: 'w-full bg-primary text-primary-foreground shadow-sm hover:bg-default/90',
-  destructive: 'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
-  outline: 'text-secondary-foreground border border-input shadow-sm hover:bg-accent hover:text-accent-foreground',
-  secondary: 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
-  ghost: 'text-secondary-foreground hover:bg-accent hover:text-accent-foreground',
+  default:
+    'w-full bg-primary text-primary-foreground shadow-sm hover:bg-default/90',
+  destructive:
+    'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
+  outline:
+    'text-secondary-foreground border border-input shadow-sm hover:bg-accent hover:text-accent-foreground',
+  secondary:
+    'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
+  ghost:
+    'text-secondary-foreground hover:bg-accent hover:text-accent-foreground',
   link: 'text-primary underline-offset-4 hover:underline',
   none: '',
 }

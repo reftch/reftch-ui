@@ -17,6 +17,6 @@
 
     "types": ["vitest/jsdom"]
   },
-  "include": ["./lib/**/*.ts", ],
+  "include": ["./lib/**/*.ts"],
   "exclude": ["**/*.spec.ts"]
 }

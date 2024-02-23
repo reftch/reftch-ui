@@ -4,7 +4,8 @@ import { BaseElement } from '@reftch-ui/tailwind'
 
 @customElement('form-control')
 export class FormControl extends BaseElement(LitElement) {
-  @property({ type: String }) error: 'grammar' | 'false' | 'spelling' | 'true' = 'false'
+  @property({ type: String }) error: 'grammar' | 'false' | 'spelling' | 'true' =
+    'false'
 
   protected defaultClass = 'relative mt-1'
 

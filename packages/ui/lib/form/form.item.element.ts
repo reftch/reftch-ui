@@ -6,7 +6,8 @@ import { BaseElement } from '@reftch-ui/tailwind'
 export class FormItem extends BaseElement(LitElement) {
   @property({ type: Boolean }) show = true
 
-  protected defaultClass = 'text-sm text-primary rtl:text-right font-medium block mb-1'
+  protected defaultClass =
+    'text-sm text-primary rtl:text-right font-medium block mb-1'
 
   get wrapper() {
     return html`

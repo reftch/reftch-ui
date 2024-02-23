@@ -22,7 +22,8 @@ export class SelectValue extends BaseElement(LitElement) {
   protected get elementClass() {
     return twMerge(
       this.defaultClass,
-      this.state?.disabled && 'opacity-50 focus-visible:ring-0 cursor-default tab',
+      this.state?.disabled &&
+        'opacity-50 focus-visible:ring-0 cursor-default tab',
       this.getAttribute('class')
     )
   }

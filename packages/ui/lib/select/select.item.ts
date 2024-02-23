@@ -34,7 +34,11 @@ export class SelectItem extends BaseElement(LitElement) {
   }
 
   protected get elementClass() {
-    return twMerge(this.defaultClass, this.value === this.state?.value.id && 'bg-muted', this.getAttribute('class'))
+    return twMerge(
+      this.defaultClass,
+      this.value === this.state?.value.id && 'bg-muted',
+      this.getAttribute('class')
+    )
   }
 
   render() {
@@ -44,7 +48,9 @@ export class SelectItem extends BaseElement(LitElement) {
           <div>
             <slot></slot>
           </div>
-          <div>${this.value === this.state?.value.id ? this.checked : nothing}</div>
+          <div>
+            ${this.value === this.state?.value.id ? this.checked : nothing}
+          </div>
         </div>
       </div>
     `

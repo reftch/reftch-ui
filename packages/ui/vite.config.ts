@@ -4,8 +4,7 @@ import { resolve } from 'node:path'
 export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
   if (command === 'serve') {
     return {
-      test: {
-      }
+      test: {},
     }
   } else {
     // command === 'build'
@@ -19,7 +18,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         lib: {
           entry: [resolve(__dirname, 'lib/index.ts')],
           name: 'reftch-ui',
-          fileName: (format) => `reftch-ui.${format}.js`
+          fileName: (format) => `reftch-ui.${format}.js`,
         },
       },
     }

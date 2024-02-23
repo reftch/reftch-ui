@@ -9,7 +9,9 @@ describe('Checkbox element', async () => {
   const TAG = 'input-element'
 
   function getInsideElement<T extends HTMLElement>(): T | null | undefined {
-    return document.body.querySelector(TAG)?.shadowRoot?.querySelector<T>('input')
+    return document.body
+      .querySelector(TAG)
+      ?.shadowRoot?.querySelector<T>('input')
   }
 
   it('should be in default state', async () => {

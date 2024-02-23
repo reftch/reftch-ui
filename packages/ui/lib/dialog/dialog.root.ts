@@ -4,7 +4,7 @@ import { BaseElement } from '@reftch-ui/tailwind'
 import { twMerge } from 'tailwind-merge'
 import { DelegatedListener, EventListener } from './delegated.listener'
 import { createContext, provide } from '@lit/context'
-import elementStyles from "./dialog.root.css?inline";
+import elementStyles from './dialog.root.css?inline'
 
 export type DialogState = {
   closeButton: boolean
@@ -15,7 +15,10 @@ export const dialogContext = createContext<DialogState>({
 })
 
 @customElement('dialog-root')
-export class DialogRoot extends BaseElement(LitElement, elementStyles) implements EventListener {
+export class DialogRoot
+  extends BaseElement(LitElement, elementStyles)
+  implements EventListener
+{
   private delegatedListener: DelegatedListener | undefined
 
   @property({ type: Boolean }) closeButton = true
@@ -37,7 +40,9 @@ export class DialogRoot extends BaseElement(LitElement, elementStyles) implement
     }
   }
 
-  protected defaultClass = twMerge('fixed w-screen h-screen bg-[rgba(0,0,0,0.05)] z-99 left-0 top-0')
+  protected defaultClass = twMerge(
+    'fixed w-screen h-screen bg-[rgba(0,0,0,0.05)] z-99 left-0 top-0'
+  )
 
   render() {
     return html`

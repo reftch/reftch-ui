@@ -18,7 +18,9 @@ describe('Checkbox element', async () => {
     const el = await vi.waitUntil(() => getInsideElement())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('flex cursor-pointer relative left-px items-center')
+    expect(el.className).toContain(
+      'flex cursor-pointer relative left-px items-center'
+    )
     // unchecked mode
     expect(el.querySelector('div#unchecked')).not.toBeNull()
     expect(el.querySelector('div#checked')).toBeNull()
@@ -31,7 +33,9 @@ describe('Checkbox element', async () => {
     const el = await vi.waitUntil(() => getInsideElement())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('flex cursor-pointer relative left-px items-center')
+    expect(el.className).toContain(
+      'flex cursor-pointer relative left-px items-center'
+    )
     // checked mode
     expect(el.querySelector('div#checked')).not.toBeNull()
     expect(el.querySelector('div#unchecked')).toBeNull()
@@ -44,7 +48,9 @@ describe('Checkbox element', async () => {
     const el = await vi.waitUntil(() => getInsideElement())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('flex cursor-pointer relative left-px items-center')
+    expect(el.className).toContain(
+      'flex cursor-pointer relative left-px items-center'
+    )
     // checked mode
     expect(el.querySelector('div#checked')).not.toBeNull()
     expect(el.querySelector('div#unchecked')).toBeNull()
@@ -57,7 +63,9 @@ describe('Checkbox element', async () => {
     const el = await vi.waitUntil(() => getInsideElement())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('flex cursor-pointer relative left-px items-center')
+    expect(el.className).toContain(
+      'flex cursor-pointer relative left-px items-center'
+    )
     // partly checked mode
     expect(el.querySelector('div#checked')).toBeNull()
     expect(el.querySelector('div#unchecked')).toBeNull()
@@ -70,7 +78,9 @@ describe('Checkbox element', async () => {
     const el = await vi.waitUntil(() => getInsideElement())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('flex cursor-pointer relative left-px items-center')
+    expect(el.className).toContain(
+      'flex cursor-pointer relative left-px items-center'
+    )
     // partly checked mode
     expect(el.querySelector('div#checked')).toBeNull()
     expect(el.querySelector('div#unchecked')).toBeNull()
@@ -83,7 +93,9 @@ describe('Checkbox element', async () => {
     const el = await vi.waitUntil(() => getInsideElement())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('flex cursor-pointer relative left-px items-center')
+    expect(el.className).toContain(
+      'flex cursor-pointer relative left-px items-center'
+    )
     // partly checked mode
     expect(el.querySelector('div#checked')).toBeNull()
     expect(el.querySelector('div#unchecked')).toBeNull()
@@ -96,7 +108,9 @@ describe('Checkbox element', async () => {
     const el = await vi.waitUntil(() => getInsideElement())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('flex relative left-px items-center opacity-50 cursor-default')
+    expect(el.className).toContain(
+      'flex relative left-px items-center opacity-50 cursor-default'
+    )
     // unchecked mode
     expect(el.querySelector('div#unchecked')).not.toBeNull()
     expect(el.querySelector('div#checked')).toBeNull()
@@ -109,7 +123,9 @@ describe('Checkbox element', async () => {
     const el = await vi.waitUntil(() => getInsideElement())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('flex relative left-px items-center opacity-50 cursor-default')
+    expect(el.className).toContain(
+      'flex relative left-px items-center opacity-50 cursor-default'
+    )
     // checked mode
     expect(el.querySelector('div#checked')).not.toBeNull()
     expect(el.querySelector('div#unchecked')).toBeNull()
@@ -122,7 +138,9 @@ describe('Checkbox element', async () => {
     const el = await vi.waitUntil(() => getInsideElement())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('flex relative left-px items-center opacity-50 cursor-default')
+    expect(el.className).toContain(
+      'flex relative left-px items-center opacity-50 cursor-default'
+    )
     // partly checked mode
     expect(el.querySelector('div#checked')).toBeNull()
     expect(el.querySelector('div#unchecked')).toBeNull()
@@ -135,10 +153,12 @@ describe('Checkbox element', async () => {
     const el = await vi.waitUntil(() => getInsideElement())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('flex cursor-pointer relative left-px items-center')
+    expect(el.className).toContain(
+      'flex cursor-pointer relative left-px items-center'
+    )
     // checked mode
     expect(el.querySelector('div#checked')).not.toBeNull()
-    expect(el.querySelector('div#checked')?.className).toContain("h-4 w-4")
+    expect(el.querySelector('div#checked')?.className).toContain('h-4 w-4')
   })
 
   it('should be small', async () => {
@@ -147,10 +167,12 @@ describe('Checkbox element', async () => {
     const el = await vi.waitUntil(() => getInsideElement())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('flex cursor-pointer relative left-px items-center')
+    expect(el.className).toContain(
+      'flex cursor-pointer relative left-px items-center'
+    )
     // checked mode
     expect(el.querySelector('div#checked')).not.toBeNull()
-    expect(el.querySelector('div#checked')?.className).toContain("h-3 w-3")
+    expect(el.querySelector('div#checked')?.className).toContain('h-3 w-3')
   })
 
   it('should be large', async () => {
@@ -159,10 +181,11 @@ describe('Checkbox element', async () => {
     const el = await vi.waitUntil(() => getInsideElement())
 
     expect(el).not.toBeNull()
-    expect(el.className).toContain('flex cursor-pointer relative left-px items-center')
+    expect(el.className).toContain(
+      'flex cursor-pointer relative left-px items-center'
+    )
     // checked mode
     expect(el.querySelector('div#checked')).not.toBeNull()
-    expect(el.querySelector('div#checked')?.className).toContain("h-5 w-5")
+    expect(el.querySelector('div#checked')?.className).toContain('h-5 w-5')
   })
-
 })

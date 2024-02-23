@@ -8,7 +8,10 @@ export declare class BaseTailwindCSSClass {}
 
 type Constructor<T = {}> = new (...args: any[]) => T
 
-export const BaseElement = <T extends Constructor<LitElement>>(superClass: T, style?: unknown) => {
+export const BaseElement = <T extends Constructor<LitElement>>(
+  superClass: T,
+  style?: unknown
+) => {
   class BaseTailwindCSSClass extends superClass {
     static styles = [tailwindCSS, unsafeCSS(style)]
 
@@ -19,7 +22,11 @@ export const BaseElement = <T extends Constructor<LitElement>>(superClass: T, st
     }
 
     protected emit<T = any>(name: string, detail?: T) {
-      const event = new CustomEvent<T>(name, { detail: detail, bubbles: true, composed: true })
+      const event = new CustomEvent<T>(name, {
+        detail: detail,
+        bubbles: true,
+        composed: true,
+      })
       this.dispatchEvent(event)
     }
   }

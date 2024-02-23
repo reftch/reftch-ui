@@ -29,13 +29,18 @@ export class InputElement extends BaseElement(LitElement) {
     }
   }
 
-  protected updated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void {
+  protected updated(
+    _changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>
+  ): void {
     if (this.inputRef.value?.value) {
       this.inputRef.value.value = this.value
     }
   }
   protected onKeyup(e: Event): void {
-    this.emit('change', { id: this.id, value: (e.target as HTMLInputElement).value })
+    this.emit('change', {
+      id: this.id,
+      value: (e.target as HTMLInputElement).value,
+    })
   }
 
   protected get elementClass() {

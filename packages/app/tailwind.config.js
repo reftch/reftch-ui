@@ -1,4 +1,4 @@
-import { join, dirname } from "path"
+import { join, dirname } from 'path'
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -9,6 +9,9 @@ module.exports = {
     join(dirname(require.resolve('@reftch-ui/ui')), '**/*.{html,ts,js}'),
   ],
   theme: {
+    fontFamily: {
+      sans: ['Source Sans Pro'],
+    },
     extend: {
       colors: {
         border: 'hsl(var(--border))',
@@ -71,7 +74,7 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'expand': 'expand 0.2s ease-in-out',
+        expand: 'expand 0.2s ease-in-out',
         'fade-in': 'fade-in 0.3s ease-out',
       },
     },

@@ -7,12 +7,14 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "format": "prettier . --write",
     "clean": "npx -y rimraf ./dist ./types ./node_modules"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@fontsource/source-sans-pro": "^5.0.8",
     "@reftch-ui/tailwind": "^1.0.0",
     "@reftch-ui/ui": "^1.0.0",
     "lit": "^3.1.2"

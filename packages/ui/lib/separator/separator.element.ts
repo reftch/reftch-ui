@@ -10,7 +10,11 @@ export class SeparatorElement extends BaseElement(LitElement) {
   protected defaultClass = 'shrink-0 bg-border border-border'
 
   protected get elementClass() {
-    return twMerge(this.defaultClass, this.type === 'horizontal' ? 'border-b' : 'border-l', this.getAttribute('class'))
+    return twMerge(
+      this.defaultClass,
+      this.type === 'horizontal' ? 'border-b' : 'border-l',
+      this.getAttribute('class')
+    )
   }
 
   render() {
