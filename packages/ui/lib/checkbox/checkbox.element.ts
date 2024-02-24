@@ -66,21 +66,13 @@ export class CheckboxElement extends BaseElement(LitElement) {
   protected defaultClass = 'flex cursor-pointer relative left-px items-center'
 
   protected get elementClass() {
-    return twMerge(
-      this.defaultClass,
-      this.disabled && 'opacity-50 cursor-default',
-      this.getAttribute('class')
-    )
+    return twMerge(this.defaultClass, this.disabled && 'opacity-50 cursor-default', this.getAttribute('class'))
   }
 
   render() {
     return html`
       <div class=${this.elementClass} @click=${this.handleClick}>
-        ${this.isPartlySelected
-          ? this.checkboxPartly
-          : this.checked
-            ? this.checkboxChecked
-            : this.checkboxUnchecked}
+        ${this.isPartlySelected ? this.checkboxPartly : this.checked ? this.checkboxChecked : this.checkboxUnchecked}
         <slot></slot>
       </div>
     `

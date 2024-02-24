@@ -45,11 +45,7 @@ export class SelectElement extends BaseElement(LitElement) {
   protected defaultClass = `select-none`
 
   protected get elementClass() {
-    return twMerge(
-      this.defaultClass,
-      !this.disabled ? 'cursor-pointer' : 'cursor-default',
-      this.getAttribute('class')
-    )
+    return twMerge(this.defaultClass, !this.disabled ? 'cursor-pointer' : 'cursor-default', this.getAttribute('class'))
   }
 
   protected updated(): void {
@@ -60,9 +56,7 @@ export class SelectElement extends BaseElement(LitElement) {
       options: this.options,
     }
     if (this.value && this.options.length > 0) {
-      const idx = this.options.findIndex(
-        (i: SelectItemType) => i.id === this.value
-      )
+      const idx = this.options.findIndex((i: SelectItemType) => i.id === this.value)
       if (idx !== -1) {
         this.state = {
           ...this.state,
@@ -113,9 +107,7 @@ export class SelectElement extends BaseElement(LitElement) {
   }
 
   next() {
-    let idx = this.options.findIndex(
-      (i: SelectItemType) => i.id === this.state.value.id
-    )
+    let idx = this.options.findIndex((i: SelectItemType) => i.id === this.state.value.id)
     if (idx < this.options.length - 1) {
       this.state = {
         ...this.state,
@@ -128,9 +120,7 @@ export class SelectElement extends BaseElement(LitElement) {
   }
 
   previous() {
-    const idx = this.options.findIndex(
-      (i: SelectItemType) => i.id === this.state.value.id
-    )
+    const idx = this.options.findIndex((i: SelectItemType) => i.id === this.state.value.id)
     if (idx !== -1 && idx > 0) {
       this.state = {
         ...this.state,
@@ -146,9 +136,7 @@ export class SelectElement extends BaseElement(LitElement) {
     const el = this.shadowRoot?.querySelector<HTMLElement>('select-trigger')
     el?.childNodes.forEach((n: Node) => {
       if (n.nodeName.toLowerCase() === 'select-value') {
-        const el = (
-          n as LitElement
-        ).shadowRoot?.querySelector<HTMLInputElement>('input')
+        const el = (n as LitElement).shadowRoot?.querySelector<HTMLInputElement>('input')
         el?.focus()
       }
     })

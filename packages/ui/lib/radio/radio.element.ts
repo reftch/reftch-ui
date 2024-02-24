@@ -52,20 +52,14 @@ export class RadioElement extends BaseElement(LitElement) {
   protected defaultClass = 'flex cursor-pointer relative left-px items-center'
 
   protected get elementClass() {
-    return twMerge(
-      this.defaultClass,
-      this.disabled && 'opacity-50 cursor-default',
-      this.getAttribute('class')
-    )
+    return twMerge(this.defaultClass, this.disabled && 'opacity-50 cursor-default', this.getAttribute('class'))
   }
 
   render() {
     return html`
       <div class=${this.elementClass} @click=${this.handleClick}>
         ${this.checked ? this.radioChecked : this.radioUnchecked}
-        <div
-          class="relative inline-block pl-[0.5em] whitespace-nowrap overflow-hidden text-ellipsis"
-        >
+        <div class="relative inline-block pl-[0.5em] whitespace-nowrap overflow-hidden text-ellipsis">
           <slot></slot>
         </div>
       </div>

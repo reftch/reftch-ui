@@ -18,11 +18,7 @@ export class SelectContent extends BaseElement(LitElement) {
   )
 
   protected get elementClass() {
-    return twMerge(
-      this.defaultClass,
-      this.state?.open && 'visible opacity-100',
-      this.getAttribute('class')
-    )
+    return twMerge(this.defaultClass, this.state?.open && 'visible opacity-100', this.getAttribute('class'))
   }
 
   get content() {
@@ -30,8 +26,7 @@ export class SelectContent extends BaseElement(LitElement) {
       <div class=${this.elementClass}>
         <div class="py-1 text-sm">
           ${this.state?.options.map(
-            (item: SelectItemType) =>
-              html`<select-item value=${item.id}>${item.label}</select-item>`
+            (item: SelectItemType) => html`<select-item value=${item.id}>${item.label}</select-item>`
           )}
         </div>
       </div>

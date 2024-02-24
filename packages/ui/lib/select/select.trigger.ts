@@ -10,9 +10,7 @@ export class SelectTrigger extends BaseElement(LitElement) {
   @consume({ context: selectContext, subscribe: true })
   state: SelectState | undefined
 
-  protected defaultClass: string = twMerge(
-    'whitespace-nowrap h-9 w-full select-none'
-  )
+  protected defaultClass: string = twMerge('whitespace-nowrap h-9 w-full select-none')
 
   get chevronUp() {
     return html`

@@ -15,10 +15,7 @@ export const dialogContext = createContext<DialogState>({
 })
 
 @customElement('dialog-root')
-export class DialogRoot
-  extends BaseElement(LitElement, elementStyles)
-  implements EventListener
-{
+export class DialogRoot extends BaseElement(LitElement, elementStyles) implements EventListener {
   private delegatedListener: DelegatedListener | undefined
 
   @property({ type: Boolean }) closeButton = true
@@ -40,9 +37,7 @@ export class DialogRoot
     }
   }
 
-  protected defaultClass = twMerge(
-    'fixed w-screen h-screen bg-[rgba(0,0,0,0.05)] z-99 left-0 top-0'
-  )
+  protected defaultClass = twMerge('fixed w-screen h-screen bg-[rgba(0,0,0,0.05)] z-99 left-0 top-0')
 
   render() {
     return html`

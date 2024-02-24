@@ -24,9 +24,7 @@ export class DialogContent extends BaseElement(LitElement) {
       <dialog-overlay>
         <div class=${this.elementClass}>
           <slot></slot>
-          ${this.state?.closeButton
-            ? html`<dialog-close></dialog-close>`
-            : nothing}
+          ${this.state?.closeButton ? html`<dialog-close></dialog-close>` : nothing}
         </div>
       </dialog-overlay>
     `

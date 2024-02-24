@@ -4,8 +4,7 @@ import { BaseElement } from '@reftch-ui/tailwind'
 
 @customElement('dialog-title')
 export class DialogTitle extends BaseElement(LitElement) {
-  protected defaultClass =
-    'text-lg font-semibold leading-none tracking-tight text-primary'
+  protected defaultClass = 'text-lg font-semibold leading-none tracking-tight text-primary'
 
   render() {
     return html`

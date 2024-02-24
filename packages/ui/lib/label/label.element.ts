@@ -19,10 +19,7 @@ export class LabelElement extends BaseElement(LitElement) {
 
   render() {
     return html`
-      <label
-        class=${this.elementClass}
-        htmlFor=${this.getAttribute('htmlFor')!}
-      >
+      <label class=${this.elementClass} htmlFor=${this.getAttribute('htmlFor')!}>
         <slot></slot>
       </label>
     `

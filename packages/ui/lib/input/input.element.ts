@@ -29,9 +29,7 @@ export class InputElement extends BaseElement(LitElement) {
     }
   }
 
-  protected updated(
-    _changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>
-  ): void {
+  protected updated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void {
     if (this.inputRef.value?.value) {
       this.inputRef.value.value = this.value
     }

@@ -33,18 +33,10 @@ export class PanelElement extends BaseElement(LitElement) {
           ${this.columns.map(
             (c: PanelValue, idx: number) => html`
               <div class=${this.gridRowClasses}>
-                <div
-                  class="whitespace-nowrap overflow-hidden text-ellipsis p-2 font-semibold"
-                >
-                  ${c.value}
-                </div>
-                <div class="whitespace-nowrap overflow-hidden text-ellipsis">
-                  ${c.value}
-                </div>
+                <div class="whitespace-nowrap overflow-hidden text-ellipsis p-2 font-semibold">${c.value}</div>
+                <div class="whitespace-nowrap overflow-hidden text-ellipsis">${c.value}</div>
               </div>
-              ${idx !== this.columns.length - 1
-                ? html`<separator-element></separator-element>`
-                : nothing}
+              ${idx !== this.columns.length - 1 ? html`<separator-element></separator-element>` : nothing}
             `
           )}
         </div>

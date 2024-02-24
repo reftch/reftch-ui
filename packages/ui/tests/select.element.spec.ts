@@ -32,31 +32,21 @@ describe('Select element', async () => {
   //   return new Promise(resolve => setTimeout(resolve, time));
   // }
 
-  function getInsideElement<T extends HTMLElement>(
-    parent: HTMLElement,
-    tag: string,
-    el = 'div'
-  ): T | null | undefined {
+  function getInsideElement<T extends HTMLElement>(parent: HTMLElement, tag: string, el = 'div'): T | null | undefined {
     return parent.querySelector(tag)?.shadowRoot?.querySelector<T>(el)
   }
 
   async function open(openWith: 'click' | (string & {}) = 'click') {
     // const user = userEvent.setup();
 
-    let element = await vi.waitUntil(() =>
-      getInsideElement<HTMLElement>(document.body, 'select-element')
-    )
+    let element = await vi.waitUntil(() => getInsideElement<HTMLElement>(document.body, 'select-element'))
     expect(element).not.toBeNull()
     expect(element.className).toContain('select-none cursor-pointer')
 
-    let trigger = await vi.waitUntil(() =>
-      element.querySelector<HTMLElement>('select-trigger')
-    )
+    let trigger = await vi.waitUntil(() => element.querySelector<HTMLElement>('select-trigger'))
     expect(trigger).not.toBeNull()
 
-    let value = await vi.waitUntil(() =>
-      element.querySelector<HTMLInputElement>('select-value')
-    )
+    let value = await vi.waitUntil(() => element.querySelector<HTMLInputElement>('select-value'))
     expect(value).not.toBeNull()
 
     if (openWith === 'click') {
@@ -66,9 +56,7 @@ describe('Select element', async () => {
       userEvent.type(value, openWith)
     }
 
-    let content = await vi.waitUntil(() =>
-      getInsideElement(element, 'select-content')
-    )
+    let content = await vi.waitUntil(() => getInsideElement(element, 'select-content'))
     expect(content).not.toBeNull()
 
     return { element, content, trigger, value }
@@ -104,9 +92,7 @@ describe('Select element', async () => {
     await userEvent.type(value, '{arrowdown}')
     await userEvent.type(value, '{enter}')
 
-    value = await vi.waitUntil(() =>
-      element.querySelector<HTMLInputElement>('select-value')
-    )
+    value = await vi.waitUntil(() => element.querySelector<HTMLInputElement>('select-value'))
     expect(value).not.toBeNull()
     let input = value.shadowRoot?.querySelector('input')
     expect(input?.value).toEqual('Test1')
@@ -119,9 +105,7 @@ describe('Select element', async () => {
     await userEvent.type(value, '{arrowdown}{arrowdown}')
     await userEvent.type(value, '{enter}')
 
-    value = await vi.waitUntil(() =>
-      element.querySelector<HTMLInputElement>('select-value')
-    )
+    value = await vi.waitUntil(() => element.querySelector<HTMLInputElement>('select-value'))
     expect(value).not.toBeNull()
     let input = value.shadowRoot?.querySelector('input')
     expect(input?.value).toEqual('Test2')
@@ -131,15 +115,10 @@ describe('Select element', async () => {
     mount()
     let { element, value } = await open('{enter}')
 
-    await userEvent.type(
-      value,
-      '{arrowdown}{arrowdown}{arrowdonw}{arrowup}{arrowup}'
-    )
+    await userEvent.type(value, '{arrowdown}{arrowdown}{arrowdonw}{arrowup}{arrowup}')
     await userEvent.type(value, '{enter}')
 
-    value = await vi.waitUntil(() =>
-      element.querySelector<HTMLInputElement>('select-value')
-    )
+    value = await vi.waitUntil(() => element.querySelector<HTMLInputElement>('select-value'))
     expect(value).not.toBeNull()
     let input = value.shadowRoot?.querySelector('input')
     expect(input?.value).toEqual('Test1')
@@ -151,14 +130,10 @@ describe('Select element', async () => {
     await userEvent.type(value, '{esc}')
 
     // await delay(2000)
-    let element = await vi.waitUntil(() =>
-      getInsideElement<HTMLElement>(document.body, 'select-element')
-    )
+    let element = await vi.waitUntil(() => getInsideElement<HTMLElement>(document.body, 'select-element'))
     expect(element).not.toBeNull()
 
-    let content = await vi.waitUntil(() =>
-      element.querySelector<HTMLInputElement>('select-content')
-    )
+    let content = await vi.waitUntil(() => element.querySelector<HTMLInputElement>('select-content'))
     expect(content).not.toBeNull()
     expect(content.innerHTML).toEqual('')
   })
