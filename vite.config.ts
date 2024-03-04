@@ -36,7 +36,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       build: {
         outDir: './dist',
         emptyOutDir: true,
-        cssCodeSplit: true,
+        cssCodeSplit: false,
         manifest: false,
         sourcemap: true,
         lib: {

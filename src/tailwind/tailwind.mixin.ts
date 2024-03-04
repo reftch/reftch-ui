@@ -1,5 +1,5 @@
 import { LitElement, unsafeCSS } from 'lit'
-import * as style from './tailwind.global.css'
+import style from './tailwind.global.css?inline'
 import { twMerge } from 'tailwind-merge'
 
 const tailwindCSS = unsafeCSS(style)
