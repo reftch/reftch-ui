@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'node:path'
 import { minify } from 'terser'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
 function minifyBundles() {
   return {
@@ -9,7 +10,7 @@ function minifyBundles() {
       for (let key in bundle) {
         if (bundle[key].type == 'chunk' && key.endsWith('.js')) {
           const minifyCode = await minify(bundle[key].code, {
-            sourceMap: false,
+            sourceMap: true,
           })
           bundle[key].code = minifyCode.code
         }
@@ -45,7 +46,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           fileName: (format) => `index.${format}.js`,
         },
       },
-      plugins: [minifyBundles()],
+      plugins: [libInjectCss(), minifyBundles()],
     }
   }
 })

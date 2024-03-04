@@ -1,8 +1,8 @@
 import { LitElement, unsafeCSS } from 'lit'
-// import * as style from './tailwind.global.css'
+import * as style from './tailwind.global.css'
 import { twMerge } from 'tailwind-merge'
 
-// const tailwindCSS = unsafeCSS(style)
+const tailwindCSS = unsafeCSS(style)
 
 // Define the interface for the mixin
 export declare class TailwindMixinInterface {
@@ -14,8 +14,7 @@ type Constructor<T = {}> = new (...args: any[]) => T
 
 export const TailwindMixin = <T extends Constructor<LitElement>>(superClass: T, style?: unknown) => {
   class BaseTailwindCSSClass extends superClass {
-    // static styles = [tailwindCSS, unsafeCSS(style)]
-    static styles = [unsafeCSS(style)]
+    static styles = [tailwindCSS, unsafeCSS(style)]
 
     protected defaultClass = ''
 

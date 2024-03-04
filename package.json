@@ -1,6 +1,6 @@
 {
   "name": "reftch-ui",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": {
     "name": "reftch",
     "url": "https://github.com/reftch"
@@ -32,6 +32,7 @@
     "tailwind-merge": "^2.2.1",
     "terser": "^5.28.1",
     "typescript": "^5.2.2",
-    "vite": "^5.1.4"
+    "vite": "^5.1.4",
+    "vite-plugin-lib-inject-css": "^2.0.0"
   }
 }
