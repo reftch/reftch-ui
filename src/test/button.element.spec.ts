@@ -18,8 +18,8 @@ describe('Button element', async () => {
     const el = await vi.waitUntil(() => getInsideButton())
 
     expect(el).not.toBeNull()
-    expect(el.classList).toContain('text-background')
-    expect(el.classList).toContain('bg-default')
+    expect(el.classList).toContain('text-primary-foreground')
+    expect(el.classList).toContain('bg-primary')
   })
 
   it('should be in secondary mode', async () => {

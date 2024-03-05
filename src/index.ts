@@ -1,4 +1,3 @@
-import './index.css'
 
 // Tailwind CSS mixin
 export { TailwindMixin } from './lib/tailwind/tailwind.mixin'
