@@ -16,7 +16,7 @@ declare const size: {
     lg: string;
     icon: string;
 };
-declare const ButtonElement_base: (new (...args: any[]) => import("../../tailwind/tailwind.mixin").TailwindMixinInterface) & typeof LitElement;
+declare const ButtonElement_base: (new (...args: any[]) => import("$lib/tailwind/tailwind.mixin").TailwindMixinInterface) & typeof LitElement;
 export declare class ButtonElement extends ButtonElement_base {
     variant: ButtonColor;
     size: ButtonSize;
@@ -27,3 +27,4 @@ export declare class ButtonElement extends ButtonElement_base {
     render(): import("lit-html").TemplateResult<1>;
 }
 export {};
+//# sourceMappingURL=button.element.d.ts.map

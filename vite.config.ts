@@ -24,13 +24,18 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
   if (command === 'serve') {
     return {
       test: {},
+      resolve: {
+        alias: {
+          $lib: resolve(__dirname, './src/lib'),
+        },
+      },
     }
   } else {
     // command === 'build'
     return {
       resolve: {
         alias: {
-          $ui: resolve(__dirname, './src/'),
+          $lib: resolve(__dirname, './src/lib'),
         },
       },
       build: {

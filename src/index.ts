@@ -1,10 +1,10 @@
 import './index.css'
 
 // Tailwind CSS mixin
-export { TailwindMixin } from './tailwind/tailwind.mixin'
+export { TailwindMixin } from './lib/tailwind/tailwind.mixin'
 
 // Separator
-export { SeparatorElement } from './ui/separator/separator.element'
+export { SeparatorElement } from './lib/ui/separator/separator.element'
 
 // Button
-export { ButtonElement } from './ui/button/button.element'
+export { ButtonElement } from './lib/ui/button/button.element'
